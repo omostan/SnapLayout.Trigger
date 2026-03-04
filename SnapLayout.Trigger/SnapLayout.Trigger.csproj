@@ -2,33 +2,43 @@
 
 	<PropertyGroup>
 	<TargetFramework>net10.0-windows</TargetFramework>
+  <ImplicitUsings>enable</ImplicitUsings>
 	<Nullable>enable</Nullable>
 	<UseWPF>true</UseWPF>
-	<ImplicitUsings>enable</ImplicitUsings>
 	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	<LangVersion>latest</LangVersion>
+  <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 
-	<!-- NuGet Package Metadata -->
+    <!-- NuGet Package Metadata -->
 	<PackageId>SnapLayout.Trigger</PackageId>
+  <Description>A WPF library that enables Windows 11 Snap Layout functionality on custom window maximize buttons. Supports both mouse hover and mouse hold behaviors.</Description>
 	<Version>1.0.1</Version>
-	<Authors>Stanley Omoregie</Authors>
+
+  <!-- Author and Company Information -->
+  <Authors>Stanley Omoregie</Authors>
 	<Company>Omotech Digital Solutions</Company>
+  <Copyright>Copyright © 2025 Omotech Digital Solutions</Copyright>
 	<Product>DotNet WPF Tool Kit</Product>
-	<Description>A WPF library that enables Windows 11 Snap Layout functionality on custom window maximize buttons. Supports both mouse hover and mouse hold behaviors.</Description>
-	<Copyright>Copyright © 2025 Omotech Digital Solutions</Copyright>
 	<PackageProjectUrl>https://github.com/omostan/SnapLayout.Trigger</PackageProjectUrl>
 	<RepositoryUrl>https://github.com/omostan/SnapLayout.Trigger</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
 	<PackageTags>wpf;windows11;snap-layout;window-management;ui;controls</PackageTags>
+
+  <!-- License Information -->
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+  <!-- Package Icon and README -->
 	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<PackageIcon>icon.png</PackageIcon>
+
+  <!-- Additional Metadata -->
 	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="icon.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 </Project>
