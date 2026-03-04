@@ -7,7 +7,7 @@
 	<UseWPF>true</UseWPF>
 	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 	<LangVersion>latest</LangVersion>
-  <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
     <!-- NuGet Package Metadata -->
 	<PackageId>SnapLayout.Trigger</PackageId>
