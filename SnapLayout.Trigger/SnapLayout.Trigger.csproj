@@ -26,11 +26,15 @@
 	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	<PackageIcon>icon.ico</PackageIcon>
+	<PackageIcon>icon.png</PackageIcon>
+	<PackageIcon>icon.svg</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<None Include="..\README.md" Pack="true" PackagePath="\" />
 		<None Include="..\icon.ico" Pack="true" PackagePath="\" />
+		<None Include="..\icon.png" Pack="true" PackagePath="\" />
+		<None Include="..\icon.svg" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 </Project>
