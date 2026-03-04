@@ -11,7 +11,7 @@
 		<!-- NuGet Package Metadata -->
 	<PackageId>SnapLayout.Trigger</PackageId>
 	<Description>A WPF library that enables Windows 11 Snap Layout functionality on custom window maximize buttons. Supports both mouse hover and mouse hold behaviors.</Description>
-	<Version>1.0.1</Version>
+	<Version>1.0.2</Version>
 
   <!-- Author and Company Information -->
   <Authors>Stanley Omoregie</Authors>
@@ -27,6 +27,7 @@
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 
   <!-- Package Icon and README -->
+	<PackageIcon>icon.png</PackageIcon>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 
   <!-- Additional Metadata -->
@@ -36,6 +37,7 @@
 
 	<ItemGroup>
 		<None Include="..\README.md" Pack="true" PackagePath="\" />
+		<None Include="icon.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 </Project>

@@ -5,6 +5,14 @@ All notable changes to the SnapLayout.Trigger project will be documented in this
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-03-04
+
+### Added
+- Package icon (128x128 PNG) for better visual identification on NuGet.org
+
+### Changed
+- Enhanced package metadata with visual branding
+
 ## [1.0.1] - 2026-03-04
 
 ### Changed
@@ -89,20 +97,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-[Unreleased]: https://github.com/omostan/SnapLayout.Trigger/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/omostan/SnapLayout.Trigger/compare/v1.0.2...HEAD
+[1.0.2]: https://github.com/omostan/SnapLayout.Trigger/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/omostan/SnapLayout.Trigger/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/omostan/SnapLayout.Trigger/releases/tag/v1.0.0
 
-#### Removed
-- Removed features
-
-#### Fixed
-- Bug fixes
-
-#### Security
-- Security fixes
-
----
-
-[Unreleased]: https://github.com/omostan/SnapLayout.Trigger/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/omostan/SnapLayout.Trigger/releases/tag/v1.0.0
