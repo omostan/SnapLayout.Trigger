@@ -26,29 +26,25 @@ jobs:
       run: dotnet test SnapLayout.sln --configuration Release --no-build --verbosity normal
 
     - name: Pack
-      run: |
-        Write-Host "Starting pack operation..."
-        dotnet pack SnapLayout.Trigger/SnapLayout.Trigger.csproj --configuration Release --output ./artifacts --verbosity detailed
-        Write-Host "Pack completed. Listing artifacts directory:"
-        if (Test-Path ./artifacts) {
-          Get-ChildItem ./artifacts -Recurse
-        } else {
-          Write-Error "Artifacts directory was not created!"
-          exit 1
-        }
+      run: dotnet pack SnapLayout.Trigger/SnapLayout.Trigger.csproj --configuration Release --output ./artifacts --verbosity normal
 
-    - name: Verify NuGet package
+    - name: List artifacts
+      run: |
+        Write-Host "Contents of artifacts directory:"
+        Get-ChildItem ./artifacts -Recurse | ForEach-Object { Write-Host "  $($_.FullName)" }
+
+    - name: Publish to NuGet
       run: |
         $nupkgFiles = Get-ChildItem ./artifacts/*.nupkg
         if ($nupkgFiles.Count -eq 0) {
           Write-Error "No .nupkg files found in ./artifacts directory"
           exit 1
         }
-        Write-Host "Found $($nupkgFiles.Count) .nupkg file(s):"
-        $nupkgFiles | ForEach-Object { Write-Host "  - $($_.Name)" }
-
-    - name: Publish to NuGet
-      run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        Write-Host "Publishing $($nupkgFiles.Count) package(s) to NuGet:"
+        foreach ($file in $nupkgFiles) {
+          Write-Host "  Publishing: $($file.Name)"
+          dotnet nuget push $file.FullName --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        }
       env:
         NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
 
