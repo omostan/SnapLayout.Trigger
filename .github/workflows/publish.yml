@@ -17,13 +17,13 @@ jobs:
         dotnet-version: '10.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore SnapLayout.sln
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build SnapLayout.sln --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test --configuration Release --no-build --verbosity normal
+      run: dotnet test SnapLayout.sln --configuration Release --no-build --verbosity normal
 
     - name: Pack
       run: dotnet pack SnapLayout.Trigger/SnapLayout.Trigger.csproj --configuration Release --no-build --no-restore --output ./artifacts
