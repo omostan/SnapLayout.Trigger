@@ -35,65 +35,26 @@ public class SnapLayoutTriggerTests
     }
 
     [Test]
-    public void Initialize_AttachesMouseEnterHandler()
+    public void Initialize_WithButton_ButtonPropertiesRemainUnchanged()
     {
-        // Arrange & Act
+        // Arrange, Act & Assert
         RunInSTA(() =>
         {
-            var button = new Button();
+            var button = new Button
+            {
+                Content = "Test",
+                Width = 100,
+                Height = 50,
+                IsEnabled = true
+            };
+
             SnapLayoutTrigger.Initialize(button);
 
-            // Assert - Check if MouseEnter handler is attached
-            var mouseEnterEvent = typeof(UIElement).GetEvent("MouseEnter");
-            var field = typeof(UIElement).GetField("MouseEnterEvent", 
-                System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.NonPublic);
-
-            Assert.That(field, Is.Not.Null);
-        });
-    }
-
-    [Test]
-    public void Initialize_AttachesPreviewMouseLeftButtonDownHandler()
-    {
-        // Arrange & Act
-        RunInSTA(() =>
-        {
-            var button = new Button();
-            SnapLayoutTrigger.Initialize(button);
-
-            // Assert - Check if PreviewMouseLeftButtonDown handler is attached
-            var previewMouseLeftButtonDownEvent = typeof(UIElement).GetEvent("PreviewMouseLeftButtonDown");
-            Assert.That(previewMouseLeftButtonDownEvent, Is.Not.Null);
-        });
-    }
-
-    [Test]
-    public void Initialize_AttachesPreviewMouseLeftButtonUpHandler()
-    {
-        // Arrange & Act
-        RunInSTA(() =>
-        {
-            var button = new Button();
-            SnapLayoutTrigger.Initialize(button);
-
-            // Assert - Check if PreviewMouseLeftButtonUp handler is attached
-            var previewMouseLeftButtonUpEvent = typeof(UIElement).GetEvent("PreviewMouseLeftButtonUp");
-            Assert.That(previewMouseLeftButtonUpEvent, Is.Not.Null);
-        });
-    }
-
-    [Test]
-    public void Initialize_AttachesLostMouseCaptureHandler()
-    {
-        // Arrange & Act
-        RunInSTA(() =>
-        {
-            var button = new Button();
-            SnapLayoutTrigger.Initialize(button);
-
-            // Assert - Check if LostMouseCapture handler is attached
-            var lostMouseCaptureEvent = typeof(UIElement).GetEvent("LostMouseCapture");
-            Assert.That(lostMouseCaptureEvent, Is.Not.Null);
+            // Assert that initialization doesn't modify button properties
+            Assert.That(button.Content, Is.EqualTo("Test"));
+            Assert.That(button.Width, Is.EqualTo(100));
+            Assert.That(button.Height, Is.EqualTo(50));
+            Assert.That(button.IsEnabled, Is.True);
         });
     }
 
@@ -138,6 +99,7 @@ public class SnapLayoutTriggerTests
 
                 Assert.That(button, Is.Not.Null);
                 Assert.That(window, Is.Not.Null);
+                Assert.That(window.Content, Is.EqualTo(button));
             });
         });
     }

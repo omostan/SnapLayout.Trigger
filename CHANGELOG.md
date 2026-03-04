@@ -20,6 +20,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed GitHub Actions `publish.yml` workflow path separators for cross-platform compatibility
 - Added explicit `ArgumentNullException.ThrowIfNull()` validation in `Initialize()` method
 - Fixed MSBuild error "MSB1011" in GitHub Actions by specifying solution file in all dotnet commands
+- Removed flawed reflection-based tests that checked WPF internals (event handler attachment tests)
+- Replaced unreliable tests with meaningful property verification test
 
 ### Added
 - Comprehensive troubleshooting guide for GitHub publishing (`docs/GITHUB_PUBLISH_TROUBLESHOOTING.md`)
