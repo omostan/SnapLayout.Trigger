@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net10.0-windows</TargetFramework>
+	<Nullable>enable</Nullable>
+	<UseWPF>true</UseWPF>
+	<ImplicitUsings>enable</ImplicitUsings>
+	<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	<LangVersion>latest</LangVersion>
+
+	<!-- NuGet Package Metadata -->
+	<PackageId>SnapLayout.Trigger</PackageId>
+	<Version>1.0.0</Version>
+	<Authors>Stanley Omoregie</Authors>
+	<Company>Omotech Digital Solutions</Company>
+	<Product>DotNet WPF Tool Kit</Product>
+	<Description>A WPF library that enables Windows 11 Snap Layout functionality on custom window maximize buttons. Supports both mouse hover and mouse hold behaviors.</Description>
+	<Copyright>Copyright © 2025 Omotech Digital Solutions</Copyright>
+	<PackageProjectUrl>https://github.com/omostan/SnapLayout.Trigger</PackageProjectUrl>
+	<RepositoryUrl>https://github.com/omostan/SnapLayout.Trigger</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+	<PackageTags>wpf;windows11;snap-layout;window-management;ui;controls</PackageTags>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+</Project>

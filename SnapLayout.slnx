@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="SnapLayout.Trigger.Example/SnapLayout.Trigger.Example.csproj" />
+  <Project Path="SnapLayout.Trigger.Tests/SnapLayout.Trigger.Tests.csproj" />
+  <Project Path="SnapLayout.Trigger/SnapLayout.Trigger.csproj" />
+</Solution>
