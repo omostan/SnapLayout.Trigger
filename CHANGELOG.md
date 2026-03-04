@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed MSBuild error "MSB1011" in GitHub Actions by specifying solution file in all dotnet commands
 - Removed flawed reflection-based tests that checked WPF internals (event handler attachment tests)
 - Replaced unreliable tests with meaningful property verification test
+- Fixed GitHub Actions permissions error "Resource not accessible by integration" by adding `contents: write` and `packages: write` permissions to workflows
 - **Fixed NuGet pack failure by removing `--no-build` flag from pack command in publish workflow**
 - Added detailed logging and verification steps to pack process for better diagnostics
 
