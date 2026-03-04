@@ -26,7 +26,26 @@ jobs:
       run: dotnet test SnapLayout.sln --configuration Release --no-build --verbosity normal
 
     - name: Pack
-      run: dotnet pack SnapLayout.Trigger/SnapLayout.Trigger.csproj --configuration Release --output ./artifacts --verbosity normal
+      run: |
+        Write-Host "Starting pack operation..."
+        dotnet pack SnapLayout.Trigger/SnapLayout.Trigger.csproj --configuration Release --output ./artifacts --verbosity detailed
+        Write-Host "Pack completed. Listing artifacts directory:"
+        if (Test-Path ./artifacts) {
+          Get-ChildItem ./artifacts -Recurse
+        } else {
+          Write-Error "Artifacts directory was not created!"
+          exit 1
+        }
+
+    - name: Verify NuGet package
+      run: |
+        $nupkgFiles = Get-ChildItem ./artifacts/*.nupkg
+        if ($nupkgFiles.Count -eq 0) {
+          Write-Error "No .nupkg files found in ./artifacts directory"
+          exit 1
+        }
+        Write-Host "Found $($nupkgFiles.Count) .nupkg file(s):"
+        $nupkgFiles | ForEach-Object { Write-Host "  - $($_.Name)" }
 
     - name: Publish to NuGet
       run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
