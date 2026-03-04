@@ -5,6 +5,30 @@ All notable changes to the SnapLayout.Trigger project will be documented in this
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2026-03-04
+
+### Changed
+- Migrated test framework from xUnit to NUnit for better Visual Studio integration
+- Updated test project to use NUnit 4.3.1, NUnit3TestAdapter 4.6.0, and NUnit.Analyzers 4.5.0
+- Refactored all test assertions to use NUnit's constraint-based model (`Assert.That()`)
+- Updated GitHub Actions workflows to explicitly reference `SnapLayout.sln` to resolve MSBuild ambiguity
+- Corrected .NET SDK version in CI/CD workflows to use stable .NET 10.0.x
+
+### Fixed
+- Fixed XAML resource ordering issue in example project - moved `Window.Resources` before content to prevent `StaticResource` resolution errors
+- Updated `coverlet.collector` package from 6.0.0 to 8.0.0 to address security vulnerabilities
+- Fixed GitHub Actions `publish.yml` workflow path separators for cross-platform compatibility
+- Added explicit `ArgumentNullException.ThrowIfNull()` validation in `Initialize()` method
+- Fixed MSBuild error "MSB1011" in GitHub Actions by specifying solution file in all dotnet commands
+
+### Added
+- Comprehensive troubleshooting guide for GitHub publishing (`docs/GITHUB_PUBLISH_TROUBLESHOOTING.md`)
+- Enhanced XML documentation with `<exception>` tags for `Initialize()` method
+- Added `[TestFixture]` attribute to test class for NUnit compatibility
+
+### Security
+- Updated `coverlet.collector` from 6.0.0 to 8.0.0 (addresses Mend.io reported vulnerabilities)
+
 ## [1.0.0] - 2025-01-27
 
 ### Added
@@ -48,6 +72,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Deprecated
 - Soon-to-be removed features
+
+#### Removed
+- Removed features
+
+#### Fixed
+- Bug fixes
+
+#### Security
+- Security fixes
+
+---
+
+[Unreleased]: https://github.com/omostan/SnapLayout.Trigger/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/omostan/SnapLayout.Trigger/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/omostan/SnapLayout.Trigger/releases/tag/v1.0.0
 
 #### Removed
 - Removed features
