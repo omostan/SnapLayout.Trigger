@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Replaced unreliable tests with meaningful property verification test
 - Fixed NuGet pack error NU5019 by removing references to non-existent `icon.png` file
 - Fixed NuGet pack error NU5045: The 'icon' element 'icon.ico' has an invalid file extension by adding all three valid icon files (`icon.ico`, `icon.png`, `icon.svg`).
+- Removed `icon.svg` reference from `.csproj` to resolve NU5045 and added `icon.ico` and `icon.png` with correct extensions to resolve NU5045
 
 ### Added
 - Comprehensive troubleshooting guide for GitHub publishing (`docs/GITHUB_PUBLISH_TROUBLESHOOTING.md`)
