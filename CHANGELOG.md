@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed MSBuild error "MSB1011" in GitHub Actions by specifying solution file in all dotnet commands
 - Removed flawed reflection-based tests that checked WPF internals (event handler attachment tests)
 - Replaced unreliable tests with meaningful property verification test
+- Fixed NuGet pack error NU5019 by removing references to non-existent `icon.png` file
 
 ### Added
 - Comprehensive troubleshooting guide for GitHub publishing (`docs/GITHUB_PUBLISH_TROUBLESHOOTING.md`)
