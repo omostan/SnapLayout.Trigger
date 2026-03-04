@@ -22,9 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed MSBuild error "MSB1011" in GitHub Actions by specifying solution file in all dotnet commands
 - Removed flawed reflection-based tests that checked WPF internals (event handler attachment tests)
 - Replaced unreliable tests with meaningful property verification test
-- Fixed NuGet pack error NU5019 by removing references to non-existent `icon.png` file
-- Fixed NuGet pack error NU5045: The 'icon' element 'icon.ico' has an invalid file extension by adding all three valid icon files (`icon.ico`, `icon.png`, `icon.svg`).
-- Removed `icon.svg` reference from `.csproj` to resolve NU5045 and added `icon.ico` and `icon.png` with correct extensions to resolve NU5045
+- Fixed NuGet pack failure by removing references to non-existent icon files
+- Removed duplicate `<PackageIcon>` tags and invalid icon file references from project file
+- Updated pack command to run without `--no-build` flag and with verbose output for better diagnostics
 
 ### Added
 - Comprehensive troubleshooting guide for GitHub publishing (`docs/GITHUB_PUBLISH_TROUBLESHOOTING.md`)

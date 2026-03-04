@@ -25,7 +25,6 @@
 	<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
-	<PackageIcon>icon.ico</PackageIcon>
 	<PackageIcon>icon.png</PackageIcon>
 	</PropertyGroup>
 
