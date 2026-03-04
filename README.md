@@ -1,8 +1,9 @@
 # SnapLayout.Trigger
 
-[![NuGet](https://img.shields.io/nuget/v/SnapLayout.Trigger.svg)](https://www.nuget.org/packages/SnapLayout.Trigger/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![.NET](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download)
+[![NuGet](https://img.shields.io/nuget/v/SnapLayout.Trigger.svg)](https://www.nuget.org/packages/SnapLayout.Trigger/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/SnapLayout.Trigger.svg)](https://www.nuget.org/packages/SnapLayout.Trigger/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A lightweight WPF library that enables Windows 11 Snap Layout functionality on custom window maximize buttons. Provides native Windows 11-like behavior with both mouse hover and mouse hold interactions.
 
