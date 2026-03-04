@@ -28,7 +28,7 @@ jobs:
     - name: Pack
       run: |
         Write-Host "Starting pack operation..."
-        dotnet pack SnapLayout.Trigger/SnapLayout.Trigger.csproj --configuration Release --no-build --output ./artifacts --verbosity detailed
+        dotnet pack SnapLayout.Trigger/SnapLayout.Trigger.csproj --configuration Release --output ./artifacts --verbosity detailed
         Write-Host "Pack completed. Listing artifacts directory:"
         if (Test-Path ./artifacts) {
           Get-ChildItem ./artifacts -Recurse
